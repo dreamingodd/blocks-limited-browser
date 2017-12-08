@@ -9,40 +9,37 @@
 <link href="//cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" media="screen" />
 <script src="//cdn.bootcss.com/jquery/2.1.2/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="js/invite.js"></script>
+<script src="js/config.js?v=2"></script>
+<script src="js/json2.js?v=2"></script>
+<script src="js/invite.js?v=3"></script>
 <title>黄埔定制版库神钱包邀请码</title>
 </head>
 <body>
   <div class="container">
     <h3>黄埔定制版库神钱包邀请码</h3>
     <br/><br/><br/><br/><br/><br/><br/>
-
-    <div class="input-group">
-      <span class="input-group-addon" id="input-name">姓名</span>
-      <input type="text" class="form-control" placeholder="请输入姓名" aria-describedby="sizing-addon1">
-    </div>
-    <br/>
-    <div class="input-group">
-      <span class="input-group-addon" id="input-cellphone">手机号码</span>
-      <input type="text" class="form-control" placeholder="请输入手机号码" aria-describedby="sizing-addon1">
-    </div>
-    <br/>
-    <div class="input-group">
-      <span class="input-group-addon" id="input-address">收货地址</span>
-      <input type="text" class="form-control" placeholder="请输入收货地址" aria-describedby="sizing-addon1">
-    </div>
+    <form id="invite-form" method="post" action="http://localhost:8080/invite/inviteUser">
+      <div class="input-group">
+        <span class="input-group-addon">姓名</span>
+        <input id="input-name" type="text" class="form-control" placeholder="请输入姓名" aria-describedby="sizing-addon1">
+      </div>
+      <br/>
+      <div class="input-group">
+        <span class="input-group-addon">手机号码</span>
+        <input id="input-cellphone" type="text" class="form-control" placeholder="请输入手机号码" aria-describedby="sizing-addon1">
+      </div>
+      <br/>
+      <div class="input-group">
+        <span class="input-group-addon">收货地址</span>
+        <input id="input-address" type="text" class="form-control" placeholder="请输入收货地址" aria-describedby="sizing-addon1">
+      </div>
+    </form>
     <br/><br/><br/><br/>
     <center>
-      <a href="invite-code.html">
-        <button id="submit_btn" class="btn btn-primary">获得邀请码</button>
-      </a>
-      <br/><br/>
-      <a href="#">
-          <button id="alert_btn" class="btn btn-primary">已有邀请码</button>
-      </a>
+      <button id="submit-btn" class="btn btn-primary">获得邀请码</button>
       <br/><br/>
       <a href="view-invite-code.html">
-        <button id="view_btn" class="btn btn-default">查已有邀请码</button>
+        <button id="view-btn" class="btn btn-default">查已有邀请码</button>
       </a>
     </center>
   </div>
