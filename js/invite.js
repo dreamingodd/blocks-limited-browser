@@ -8,6 +8,7 @@ $(function(){
         data.name = $('#input-name').val();
         data.cellphone = $('#input-cellphone').val();
         data.address = $('#input-address').val();
+        data.etherAddress = $('#input-ether-address').val();
         $.post(
             backPath + "/invite/inviteUser",
             data,
