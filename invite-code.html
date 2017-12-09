@@ -9,16 +9,16 @@
 <link href="//cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" media="screen" />
 <script src="//cdn.bootcss.com/jquery/2.1.2/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="js/config.js?v=3"></script>
+<script src="js/config.js?v=4"></script>
 <script src="js/json2.js?v=2"></script>
 <script src="js/invite-code.js?v=5"></script>
 <script src="js/clipboard.min.js"></script>
 <script type="text/javascript">
 
 $(function(){
-    var clipboard = new Clipboard('.btn', {
+    var clipboard = new Clipboard('.copy-btn', {
         text: function() {
-            return $('#invite-code').html();
+            return $('#invite-code').html() + ' ' + buyPath;
         }
     });
 
@@ -52,9 +52,6 @@ $(function(){
         <span id="invite-code">XXXXXXXX</span>
       </p>
       <center>
-        <div class="btn-group" role="group" data-clipboard-text="1">
-          <button id="copy-btn" class="btn btn-default btn-lg copy-btn" style="background-color:#ffdf66;color:black;font-weight:bold">复制邀请码</button>
-        </div>
       </center>
       <hr/>
       <p style="text-align:center">
@@ -67,6 +64,10 @@ $(function(){
           <button id="buy-btn" class="btn btn-default">点击购买库神钱包</button>
         </a>
         <br/>
+        <br/>
+        <div class="btn-group" role="group" data-clipboard-text="1">
+          <button id="copy-btn" class="btn btn-default btn-sm copy-btn" style="background-color:#ffdf66;color:black;">点击复制邀请码和购买链接</button>
+        </div>
         <br/>
     </center>
   </div>
