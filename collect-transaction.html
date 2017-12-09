@@ -17,31 +17,17 @@
 <body>
 <div class="container">
     <h3>库神钱包数据导入</h3>
-    <br/><br/><br/><br/><br/><br/><br/>
-    <form id="invite-form" method="post" action="http://localhost:8080/invite/inviteUser">
-        <div class="input-group">
-            <span class="input-group-addon">姓名</span>
-            <input id="input-name" type="text" class="form-control" placeholder="请输入姓名" aria-describedby="sizing-addon1">
+
+    <center id="passwordDiv">
+        <textarea id="csvData" rows="20" cols="200" placeholder="请填充CSV数据"></textarea>
+        <br/><br/><br/>
+        <div class="input-group" style="width:30%">
+            <input id="input-password" type="password" class="form-control" placeholder="请输入密码" aria-describedby="sizing-addon1">
         </div>
         <br/>
-        <div class="input-group">
-            <span class="input-group-addon">手机号码</span>
-            <input id="input-cellphone" type="text" class="form-control" placeholder="请输入手机号码" aria-describedby="sizing-addon1">
-        </div>
-        <br/>
-        <div class="input-group">
-            <span class="input-group-addon">收货地址</span>
-            <input id="input-address" type="text" class="form-control" placeholder="请输入收货地址" aria-describedby="sizing-addon1">
-        </div>
-    </form>
-    <br/><br/><br/><br/>
-    <center>
-        <button id="submit-btn" class="btn btn-primary">获得邀请码</button>
-        <br/><br/>
-        <a href="view-invite-code.html">
-            <button id="view-btn" class="btn btn-default">查已有邀请码</button>
-        </a>
+        <button id="submit-btn" class="btn btn-primary">提交</button>
     </center>
+    <br/>
 </div>
 </body>
 </html>
