@@ -14,37 +14,42 @@
 <script src="js/invite.js?v=4"></script>
 <title>黄埔定制版库神钱包邀请码</title>
 </head>
-<body>
+<body style="background:url(img/background.png) no-repeat;background-size:100%;">
   <div class="container">
-    <h3>黄埔定制版库神钱包邀请码</h3>
-    <br/><br/><br/><br/><br/><br/><br/>
+
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
     <form id="invite-form" method="post" action="http://localhost:8080/invite/inviteUser">
-      <div class="input-group">
-        <span class="input-group-addon">姓名</span>
-        <input id="input-name" type="text" class="form-control" placeholder="请输入姓名" aria-describedby="sizing-addon1">
-      </div>
-      <br/>
-      <div class="input-group">
-        <span class="input-group-addon">手机号码</span>
-        <input id="input-cellphone" type="text" class="form-control" placeholder="请输入手机号码" aria-describedby="sizing-addon1">
-      </div>
-      <br/>
-      <div class="input-group">
-        <span class="input-group-addon">收货地址</span>
-        <input id="input-address" type="text" class="form-control" placeholder="请输入收货地址" aria-describedby="sizing-addon1">
-      </div>
-      <br/>
-      <div class="input-group">
-        <span class="input-group-addon">以太坊地址</span>
-        <input id="input-ether-address" type="text" class="form-control" placeholder="请输入以太坊地址" aria-describedby="sizing-addon1">
+      <div style="width:80%; margin:0 auto;">
+
+        <div class="input-group">
+          <span class="input-group-addon" style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <input id="input-name" type="text" class="form-control" placeholder="请输入姓名" aria-describedby="sizing-addon1">
+        </div>
+        <br/>
+        <div class="input-group">
+          <span class="input-group-addon">&nbsp;手机号码&nbsp;&nbsp;</span>
+          <input id="input-cellphone" type="text" class="form-control" placeholder="请输入手机号码" aria-describedby="sizing-addon1">
+        </div>
+        <br/>
+        <div class="input-group">
+          <span class="input-group-addon">&nbsp;收货地址&nbsp;&nbsp;</span>
+          <input id="input-address" type="text" class="form-control" placeholder="请输入收货地址" aria-describedby="sizing-addon1">
+        </div>
+        <br/>
+        <div class="input-group">
+          <span class="input-group-addon">以太坊地址</span>
+          <input id="input-ether-address" type="text" class="form-control" placeholder="请输入以太坊地址" aria-describedby="sizing-addon1">
+        </div>
       </div>
     </form>
-    <br/><br/><br/><br/>
+    <br/><br/>
     <center>
-      <button id="submit-btn" class="btn btn-primary">获得邀请码</button>
+      <button id="submit-btn" class="btn btn-warning btn-lg" style="background-color:#ffdf66;color:black">
+        <strong style="">获得邀请码</strong>
+      </button>
       <br/><br/>
       <a href="view-invite-code.html">
-        <button id="view-btn" class="btn btn-default">查已有邀请码</button>
+        <button id="view-btn" class="btn btn-default btn-sm">查已有邀请码</button>
       </a>
     </center>
   </div>
