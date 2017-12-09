@@ -3,6 +3,10 @@ $(function() {
     $('#view-btn').click(function(){
         var cellphone = $('#input-cellphone').val();
         // Get user information.
+        if (!is_cellphone_number(cellphone)) {
+            alert('请输入正确的手机号！')
+            return
+        }
         $.get(
             backPath + '/invite/inviteUser/' + cellphone,
             function(result) {
@@ -18,3 +22,10 @@ $(function() {
         );
     });
 });
+
+
+
+function is_cellphone_number(str) {
+    var pattern = /^\d{11}$/;
+    return pattern.test(str);
+}

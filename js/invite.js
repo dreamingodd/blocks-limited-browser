@@ -9,6 +9,14 @@ $(function(){
         data.cellphone = $('#input-cellphone').val();
         data.address = $('#input-address').val();
         data.etherAddress = $('#input-ether-address').val();
+        if (data.name == '' || data.cellphone == '' || data.address == '') {
+            alert('姓名、手机号码、收货地址和以太坊地址不能为空！')
+            return
+        }
+        if (!is_cellphone_number(data.cellphone)) {
+            alert('请输入正确的手机号！')
+            return
+        }
         $.post(
             backPath + "/invite/inviteUser",
             data,
@@ -25,3 +33,9 @@ $(function(){
         );
     })
 })
+
+
+function is_cellphone_number(str) {
+    var pattern = /^\d{11}$/;
+    return pattern.test(str);
+}
