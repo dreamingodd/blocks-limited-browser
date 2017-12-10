@@ -18,7 +18,7 @@
 $(function(){
     var clipboard = new Clipboard('.copy-btn', {
         text: function() {
-            return $('#invite-code').html() + ' ' + buyPath;
+            return $('#invite-code').html() + '\n' + buyPath;
         }
     });
 
