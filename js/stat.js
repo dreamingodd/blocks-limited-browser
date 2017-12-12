@@ -1,26 +1,23 @@
 $(function(){
-    $('#submit-btn').click(function(){
-        var password = $('#input-password').val();
-        $.get(
-            backPath + '/invite/inviteUser?password=' + password,
-            function(result) {
-                var res = JSON.parse(result);
-                if (res.status == 400) {
-                    alert(res.message);
-                } else if (res.status != 200) {
-                    alert("对不起，出错了，请稍后再试！");
-                } else {
-                    var users = res.data;
-                    $('#passwordDiv').remove();
-                    $('#data-table').append(createTh());
-                    for (i = 0; i < users.length; i++) {
-                        var user = users[i];
-                        $('#data-table').append(convertUserToTr(user));
-                    }
+    $.get(
+        backPath + '/invite/inviteUser',
+        function(result) {
+            var res = JSON.parse(result);
+            if (res.status == 400) {
+                alert(res.message);
+            } else if (res.status != 200) {
+                alert("对不起，出错了，请稍后再试！");
+            } else {
+                var users = res.data;
+                $('#passwordDiv').remove();
+                $('#data-table').append(createTh());
+                for (i = 0; i < users.length; i++) {
+                    var user = users[i];
+                    $('#data-table').append(convertUserToTr(user));
                 }
             }
-        )
-    })
+        }
+    )
 })
 
 function createTh() {
