@@ -113,7 +113,7 @@ function convertOrderToTr(order) {
 function htmlOfButtons() {
     return '<button class="btn btn-primary btn-confirmation">确认收款</button>&nbsp;'
         + '<button class="btn btn-danger btn-failure">确认失败</button>&nbsp;'
-        + '<button class="btn btn-warning btn-delivery">发货</button>&nbsp;'
-        + '<button class="btn btn-default btn-finish">完成</button>&nbsp;'
+//        + '<button class="btn btn-warning btn-delivery">发货</button>&nbsp;'
+//        + '<button class="btn btn-default btn-finish">完成</button>&nbsp;'
     ;
 }
