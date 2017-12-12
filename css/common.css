@@ -36,7 +36,7 @@ li {
 .header-back,
 .header-customer-service{
     height:5rem;
-    width:5rem;
+    width:7rem;
     position: absolute;
 }
 .header-back{
@@ -46,7 +46,7 @@ li {
     top:1.5rem;
 }
 .header-customer-service{
-    font-size:1rem;
+    font-size:1.8rem;
     top:0;
     right:1.5rem;
 }
@@ -90,8 +90,14 @@ li {
     color:#ff1939;
 }
 .common-modal{
-    background:rgba(0,0,0,.5);
+    background:rgba(0,0,0,.7);
     text-align: center;
+    height:100%;
+    position: fixed;
+    z-index: 999;
+    width:100%;
+    top:0;
+    left:0;
 }
 .model-body{
     width:20rem;
@@ -282,4 +288,28 @@ li {
     position: relative;
     top:0.5rem;
     left:1rem;
+}
+.btn-go{
+    display: inline-block;
+    background: orange;
+    padding:0.7rem 2.4rem;
+    outline: none;
+    font-size:1rem;
+    margin-top:1rem;
+    font-weight: 400;
+    border: 0;
+    border-radius: 0.5rem;
+}
+.invite-body{
+    text-align: center;
+}
+.invite-body-bottom ul li span{
+    padding-left:1rem;
+}
+.invite-body-bottom{
+    padding-top:2rem;
+    line-height: 2rem;
+}
+.invite-body-bottom b{
+    font-weight: 400;
 }

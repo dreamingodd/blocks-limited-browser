@@ -16,15 +16,17 @@ $(function() {
                 alert("对不起，出错了，请稍后再试！");
             } else {
                 inviteCode = res.data.inviteCode
-                $('#name').text(res.data.name);
-                $('#invite-code').text(inviteCode);
+                $('#_name').text(res.data.name);
                 $('#invite-count').text(res.data.inviteCount);
+                $('#_phone').html(res.data.cellphone);
+                $('#_address').html(res.data.address)
+                $('#_ytAdd').html(res.data.inviteCode)
             }
         }
     );
 
     // copy invite code
-    var clipboard = new Clipboard('.copy-btn', {
+    var clipboard = new Clipboard('#copy', {
         text: function() {
             return merchandisePath + '?inviteCode=' + inviteCode;
         }
