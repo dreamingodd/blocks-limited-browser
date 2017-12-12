@@ -15,33 +15,40 @@
     <div class="header-back">
         <span class="glyphicon glyphicon-chevron-left"></span>
     </div>
-    <div><span>确认订单</span></div>
+    <div><span>收款账户</span></div>
     <div class="header-customer-service" data-toggle="modal" data-target="#myModal">
         <span class="">联系客服</span>
     </div>
 </div>
 <div class="container">
-    <br/>
-    <p style="text-align:center;font-weight:bold;">
-        测试付款
-    </p>
-    <br/><br/>
-    <center>
-        <img id="receive-account" src="img/receive-wenda.png" style="width:100%;"/>
-    </center>
-    <div class="modal fade common-modal" id="myModal"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="model-body">
-            <img src="img/kefu1.png" alt="">
-            <p>扫码添加客服微信</p>
-            <p>微信号：pengqiuxia288</p>
+    <div class="zfb-contain">
+        <div>
+            <img src="img/pay-blue2x.png" alt="">
         </div>
+        <div>收款支付宝账号：<span id="zfbAccount"></span></div>
+        <div><button class="btn" id="copy" >复制</button></div>
+        <div>收款人姓名：<span id="zfbUser"></span></div>
+        <div>
+            <img src="img/receive-alipay.png" alt="">
+        </div>
+        <div>收款二维码</div>
     </div>
+    <div class="pay-type-foot" style="bottom:7rem;">
+        <p>请勿关闭此页面</p>
+        <p>转账完成后请点击已付款按钮</p>
+    </div>
+    <div class="total-price">
+        支付款：￥<span id="total-price"></span>
+    </div>
+    <button id="submit-btn" class="btn-common">已付款</button>
+    <br/><br/>
 </div>
 <script src="//cdn.bootcss.com/jquery/2.1.2/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="js/clipboard.min.js"></script>
 <script src="js/config.js?v=3"></script>
 <script src="js/common.js?v=1"></script>
 <script src="js/json2.js?v=2"></script>
-<script src="js/pay.js?v=1"></script>
+<script src="js/zfb.js?v=1"></script>
 </body>
 </html>

@@ -16,7 +16,7 @@ $(function() {
                 } else {
                     $('#input-name').val(res.data.name)
                     $('#input-cellphone').val(res.data.cellphone)
-                    $('#input-address').val(res.data.address)
+                    $('#input-address').val(res.data.address);
                 }
             }
         );
@@ -25,13 +25,41 @@ $(function() {
         $('#input-name').text(inviteCode)
     }
 
+    /*
+    * 头部返回
+    * */
+
+
+    /*
+    * 加减按钮
+    * */
+    $('.order-total-btn').on('click',function(e){
+        var txt = $(this).html();
+        var val = parseInt($('#input-quantity').val());
+        if (isNaN(val)) {
+            $('#input-quantity').val(1);
+            val = 1;
+        }
+        if(txt === '+') {
+            $('#input-quantity').val(val+1);
+        }else if(txt === '-') {
+            if (val > 1) {
+                $('#input-quantity').val(val-1);
+            }
+        }
+        var _val = $('#input-quantity').val();
+        $('#total-price').html(parseInt(9988*_val));
+    });
 
     $("#submit-btn").click(function(){
         var data = {};
         data.name = $('#input-name').val();
         data.cellphone = $('#input-cellphone').val();
         data.address = $('#input-address').val();
-        data.quantity = $('#input-quantity').val();
+        data.quantity = $('#input-quantity').val()||1;
+        if (inviteCode) {
+            data.inviteCode = inviteCode;
+        }
         if (data.name == '' || data.cellphone == '' || data.address == '') {
             alert('姓名、手机号码、收货地址不能为空！')
             return
@@ -40,20 +68,22 @@ $(function() {
             alert('请输入正确的手机号！')
             return
         }
-        $.post(
-            backPath + "/invite/order",
-            data,
-            function(result) {
-                var res = JSON.parse(result);
-                if (res.status != 200) {
+        $.ajax({
+            type:'post',
+            url: backPath + "/invite/order",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success:function(result){
+                var total = $('#total-price').html();
+                if (result.status != 200) {
                     alert("对不起，出错了，请稍后再试！");
-                    alert("跳转付款页面！");
-                } else if (res.data == 0) {
+                } else if (result.data == 0) {
                     alert('您已获得邀请码，请点击下方查看已有邀请码!');
-                } else {
-                    window.location.href = "pay.html?cellphone=" + data.cellphone;
+                } else if(result.data){
+                    window.location.href = "payType.html?cellphone=" + data.cellphone + "&total=" + total + '&id=' + result.data;
                 }
             }
-        );
+        });
     })
 });
