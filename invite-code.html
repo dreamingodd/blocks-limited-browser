@@ -13,24 +13,6 @@
 <script src="js/json2.js?v=2"></script>
 <script src="js/invite-code.js?v=5"></script>
 <script src="js/clipboard.min.js"></script>
-<script type="text/javascript">
-
-$(function(){
-    var clipboard = new Clipboard('.copy-btn', {
-        text: function() {
-            return $('#invite-code').html() + '\n' + buyPath;
-        }
-    });
-
-    clipboard.on('success', function(e) {
-        alert("复制成功！");
-    });
-
-    clipboard.on('error', function(e) {
-        alert("复制失败！");
-    });
-});
-</script>
 <title>黄埔定制版库神钱包邀请码</title>
 </head>
 <body style="background-color:#fe2a52;">
@@ -50,6 +32,8 @@ $(function(){
     </p>
     <br/>
     <p style="text-align:center;font-size:20px;font-weight:bold;">
+        <span id="name"></span>&nbsp;先生/女士
+        <br/>
         专属邀请码：
         <span id="invite-code">XXXXXXXX</span>
     </p>
@@ -62,13 +46,14 @@ $(function(){
     </p>
     <hr/>
     <center>
-        <a href="https://weidian.com/item.html?itemID=2213520115&state=H5WXshareOld&share_relation=a81f01e8b411eef4_937488484_1&wfr=h5direct_wxh5">
-            <button id="buy-btn" class="btn btn-default">点击购买库神钱包</button>
+        <a id="purchase-link" href="#">
+            <button id="purchase-btn" class="btn btn-default">点击购买库神钱包</button>
         </a>
         <br/>
         <br/>
         <div class="btn-group" role="group" data-clipboard-text="1">
-            <button id="copy-btn" class="btn btn-default btn-sm copy-btn" style="background-color:#ffdf66;color:black;">点击复制邀请码和购买链接</button>
+            <button id="copy-btn" class="btn btn-default btn-sm copy-btn"
+                    style="background-color:#ffdf66;color:black;">点击复制购买链接并分享给好友</button>
         </div>
         <br/><br/>
         <p style="text-align:center;font-weight:bold;">
