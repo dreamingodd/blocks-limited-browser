@@ -23,12 +23,13 @@ $(function () {
     function GetQueryString(name){
         var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
         var r = window.location.search.substr(1).match(reg);
-        if(r!=null)return  unescape(r[2]); return null;
+        if(r!=null)return  decodeURI(r[2]); return null;
     }
     $('#submit-btn').on('click',function(){
         if(payType === 'z') {
             var _zfbAccount = $('#zfb-account').val();
-            var _zfbUser = $('#zfb-user').val();
+            var _zfbUser = encodeURI($('#zfb-user').val());
+
             if (!_zfbAccount) {
                 alert('请输入支付宝账号');
                 return;
@@ -36,10 +37,10 @@ $(function () {
                 alert('请输入账号持有人');
                 return;
             }
-            window.location.href = "zfb.html?cellphone=" + GetQueryString('cellphone') + "&total=" + GetQueryString('total')+ '&account=' + _zfbAccount + '&name=' + _zfbUser;
+            window.location.href = "zfb.html?cellphone=" + GetQueryString('cellphone') + "&total=" + GetQueryString('total')+ '&account=' + _zfbAccount + '&name=' + _zfbUser + '&id=' + GetQueryString('id');
         } else {
             var _bankAccount = $('#bank-card').val();
-            var _bankUser = $('#bank-user').val();
+            var _bankUser = encodeURI($('#bank-user').val());
             if (!_bankAccount) {
                 alert('请输入银行卡');
                 return;
@@ -47,7 +48,7 @@ $(function () {
                 alert('请输入开户人');
                 return;
             }
-            window.location.href = "bank.html?cellphone=" + GetQueryString('cellphone') + "&total=" + GetQueryString('total') + '&account=' + _bankAccount + '&name=' + _bankUser;
+            window.location.href = "bank.html?cellphone=" + GetQueryString('cellphone') + "&total=" + GetQueryString('total') + '&account=' + _bankAccount + '&name=' + _bankUser+ '&id=' + GetQueryString('id');
         }
     })
 });
