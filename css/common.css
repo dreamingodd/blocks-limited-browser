@@ -12,6 +12,10 @@
     right:3rem;
     color:#fff;
 }
+
+li {
+    list-style-type:none;
+}
 .phone-back img{
     width:100%;
 }
@@ -195,8 +199,87 @@
 .zfb-contain > div:nth-child(2),
 .zfb-contain > div:nth-child(4)
 {
-    font-size:2rem;
+    font-size:1.8rem;
 }
 .zfb-contain > div:nth-child(5) img{
     width:15rem;
+}
+.common-info-title{
+    line-height: 5rem;
+    height:2.5rem;
+    font-weight: 900;
+    text-align: center;
+}
+.common-info-con{
+    border:0.1rem solid #ddd;
+    margin-top:2rem;
+}
+.common-info-top{
+    height:3rem;
+    line-height: 3rem;
+}
+.common-info-top > div:first-child{
+    float:left;
+    text-indent: 1rem;
+}
+.common-info-top > div:last-child{
+     float:right;
+}
+.common-info-bottom{
+    padding:1rem 1rem 0 1rem;
+    border-top:0.1rem solid #ddd;
+    line-height:2rem;
+}
+.info-first-li>span:first-child{
+    display: inline-block;
+    width:15rem;
+}
+
+.info-pass{
+    display: inline-block;
+    width:4rem;
+    height:3rem;
+}
+.info-pass{
+    text-align: center;
+    margin-right:1rem;
+    float:right;
+
+}
+.info-pass-icon,
+.info-pending-icon,
+.info-lose-icon{
+    display: inline-block;
+    width:2rem;
+    height:2rem;
+    position: relative;
+    top:0.5rem;
+}
+.info-pass-icon {
+    background: url(../img/yes-2x.png) no-repeat;
+    background-size: contain;
+}
+.info-lose-icon{
+    background:url(../img/X@2x.png) no-repeat;
+    background-size:contain;
+}
+.info-pending-icon{
+    background:url(../img/pending.png) no-repeat;
+    background-size:contain;
+}
+.side-info{
+    position: fixed;
+    right:0;
+    bottom:20rem;
+    width:3rem;
+    height:7.5rem;
+    background:orange;
+    word-wrap: break-word;
+    letter-spacing: 10px;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+.side-info  span{
+    position: relative;
+    top:0.5rem;
+    left:1rem;
 }
