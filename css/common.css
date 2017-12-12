@@ -36,7 +36,7 @@ li {
 .header-back,
 .header-customer-service{
     height:5rem;
-    width:7rem;
+    width:8rem;
     position: absolute;
 }
 .header-back{
@@ -46,7 +46,7 @@ li {
     top:1.5rem;
 }
 .header-customer-service{
-    font-size:1.8rem;
+    font-size:1.7rem;
     top:0;
     right:1.5rem;
 }
@@ -278,13 +278,12 @@ li {
     right:0;
     bottom:20rem;
     width:3rem;
-    height:7.5rem;
+    height:8rem;
     background:orange;
-    word-wrap: break-word;
-    letter-spacing: 10px;
     border-radius: 0.5rem 0 0 0.5rem;
 }
 .side-info  span{
+    display: block;
     position: relative;
     top:0.5rem;
     left:1rem;
@@ -298,6 +297,7 @@ li {
     margin-top:1rem;
     font-weight: 400;
     border: 0;
+    color:#525253;
     border-radius: 0.5rem;
 }
 .invite-body{
@@ -308,8 +308,19 @@ li {
 }
 .invite-body-bottom{
     padding-top:2rem;
+    padding-left:3rem;
     line-height: 2rem;
 }
 .invite-body-bottom b{
     font-weight: 400;
+}
+.common-default{
+    display: inline-block;
+    width:11rem;
+    height:3.5rem;
+    line-height: 3.5rem;
+    background:#ddd;
+    border-radius: 0.5rem;
+    color:#525353;
+    border:0.1rem solid #525353;
 }

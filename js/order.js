@@ -33,9 +33,10 @@ $(function() {
     /*
     * 加减按钮
     * */
+    var _cctv = parseInt($('#input-quantity').val());
     $('.order-total-btn').on('click',function(e){
         var txt = $(this).html();
-        var val = parseInt($('#input-quantity').val());
+        var val = _cctv||parseInt($('#input-quantity').val());
         if (isNaN(val)) {
             $('#input-quantity').val(1);
             val = 1;
