@@ -6,7 +6,9 @@ $(function() {
     var _inviteCode = GetQueryString('inviteCode');
 
     // purchase link
-    window.location.href = 'goods.html' + (_inviteCode?'?inviteCode='+_inviteCode:'')
+    $('#purchase-link').on('click',function(){
+        window.location.href = 'goods.html' + (_inviteCode?'?inviteCode='+_inviteCode:'')
+    })
 
     // Get user information.
     $.get(
