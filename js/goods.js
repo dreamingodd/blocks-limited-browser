@@ -2,7 +2,7 @@ $(function(){
     let cellphone = GetQueryString('cellphone');
     let inviteCode = GetQueryString('inviteCode');
 
-    $('#aaa').on('click',function(){
+    $('#aaa').on('tap',function(){
         alert(1111)
     })
     $('#changePage1').on('tap',function(){
