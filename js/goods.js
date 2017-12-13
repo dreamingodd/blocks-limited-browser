@@ -1,9 +1,10 @@
+
 $(function(){
-    let cellphone = GetQueryString('cellphone');
-    let inviteCode = GetQueryString('inviteCode');
+    var cellphone = GetQueryString('cellphone');
+    var inviteCode = GetQueryString('inviteCode');
 
 
-    $('#changePage1').on('click',function(){
+    $('#changePage1').on('click',function(e){
         window.location.href = frontPath + (inviteCode?'?inviteCode=' + inviteCode:'');
     })
     $('#changePage2').on('click',function(){

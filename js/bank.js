@@ -11,7 +11,7 @@ $(function () {
     $('#submit-btn').on('click', function () {
         var data = {
             id: GetQueryString('id'),
-            payChannel: 1,
+            payChannel: 2,
             payAccount: GetQueryString('account'),
             payerName: GetQueryString('name')
         };
