@@ -1,6 +1,6 @@
 $(function () {
     var password;
-    var searchText = GetQueryString('searchURL');
+    var searchText = GetQueryString('searchText');
     $('#subPwd').on('click',function(){
         setCookie('password',md5($('#password-text').val()));
         history.go(0);
@@ -55,7 +55,6 @@ $(function () {
 
     $('body').on('click', '.btn-confirmation', function () {
         var id = $(this).parent().siblings('.order-id').html();
-        console.log(id);
         $.ajax({
             type: 'put',
             url: backPath + "/invite/order/confirmation?id=" + id + '&password=' + password,
