@@ -2,10 +2,10 @@ $(function(){
     let cellphone = GetQueryString('cellphone');
     let inviteCode = GetQueryString('inviteCode');
 
-    $('#changePage1').on('click',function(){
+    $('#changePage1').on('tap',function(){
         window.location.href = frontPath + (inviteCode?'?inviteCode=' + inviteCode:'');
     })
-    $('#changePage2').on('click',function(){
+    $('#changePage2').on('tap',function(){
         if(cellphone){
             window.location.href =  'merchandise.html?cellphone=' + cellphone;
         } else if(inviteCode){
