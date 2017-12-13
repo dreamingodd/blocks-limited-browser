@@ -2,7 +2,7 @@ $(function() {
     var searchURL = window.location.search
     searchURL = searchURL.substring(1, searchURL.length)
     var type = searchURL.split("&")[0].split("=")[0]
-    var cellphone, inviteCode
+    var cellphone, inviteCode,empty;
     if (type == 'cellphone') {
         cellphone = searchURL.split("&")[0].split("=")[1]
         $('#order-link').attr('href', 'order.html?cellphone=' + cellphone)
@@ -23,6 +23,9 @@ $(function() {
     } else if (type == 'inviteCode') {
         inviteCode = searchURL.split("&")[0].split("=")[1]
         $('#input-name').text(inviteCode)
+    } else {
+        empty = 'empty';
+        $('#ytCon').removeClass('r-hide');
     }
 
     /*
@@ -34,6 +37,9 @@ $(function() {
     * 加减按钮
     * */
     var _cctv = parseInt($('#input-quantity').val());
+    if(_cctv){
+        $('#total-price').html(parseInt(9988*_cctv));
+    }
     $('.order-total-btn').on('click',function(e){
         var txt = $(this).html();
         var val = _cctv||parseInt($('#input-quantity').val());
@@ -50,6 +56,7 @@ $(function() {
         }
         var _val = $('#input-quantity').val();
         $('#total-price').html(parseInt(9988*_val));
+        _cctv = 0;
     });
 
     $("#submit-btn").click(function(){
@@ -60,6 +67,13 @@ $(function() {
         data.quantity = $('#input-quantity').val()||1;
         if (inviteCode) {
             data.inviteCode = inviteCode;
+        }
+        if(empty) {
+            data.etherAddress = $('#yt-address').val();
+            if(!data.etherAddress) {
+                alert('邀请码不能为空！');
+                return;
+            }
         }
         if (data.name == '' || data.cellphone == '' || data.address == '') {
             alert('姓名、手机号码、收货地址不能为空！')

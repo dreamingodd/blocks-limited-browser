@@ -5,7 +5,7 @@ $(function() {
     var inviteCode = '';
 
     // purchase link
-    $('#purchase-link').attr('href', 'merchandise.html?cellphone=' + cellphone);
+    $('#purchase-link').attr('href', 'goods.html?cellphone=' + cellphone);
 
     // Get user information.
     $.get(
@@ -20,7 +20,8 @@ $(function() {
                 $('#invite-count').text(res.data.inviteCount);
                 $('#_phone').html(res.data.cellphone);
                 $('#_address').html(res.data.address)
-                $('#_ytAdd').html(res.data.inviteCode)
+                $('#_ytAdd').html(res.data.etherAddress)
+                $('#inviteCode').html(inviteCode);
             }
         }
     );

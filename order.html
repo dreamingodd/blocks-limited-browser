@@ -39,11 +39,19 @@
                 <span class="input-group-addon">收货地址</span>
                 <input id="input-address" type="text" class="form-control" placeholder="请输入收货地址" aria-describedby="sizing-addon1">
             </div>
+            <div class="input-group r-hide" id="ytCon">
+                <span class="input-group-addon">邀请码</span>
+                <input id="yt-address" type="text" class="form-control" placeholder="请输入邀请码" aria-describedby="sizing-addon1">
+            </div>
             <div class="input-group order-total">
-                <span class="order-buy-total">购买数量</span>
-                <span class="order-total-btn btn-less">-</span>
-                <input id="input-quantity" type="number"  placeholder="1" aria-describedby="sizing-addon1" style="width:15%;">
-                <span class="order-total-btn btn-plus">+</span>
+                <div class="order-total-1">
+                    <span class="order-buy-total">购买数量</span>
+                </div>
+                <div class="order-total-2">
+                    <label for="input-quantity">
+                        <span class="order-total-btn btn-less">-</span><input id="input-quantity" type="number"  placeholder="1"><span class="order-total-btn btn-plus">+</span>
+                    </label>
+                </div>
             </div>
         </div>
     </form>
@@ -59,7 +67,7 @@
         <div class="total-price">
             支付款：￥<span id="total-price">9988</span>
         </div>
-        <button id="submit-btn" class="btn-common">立即下单</button>
+        <a id="submit-btn" class="btn-common">立即下单</a>
         <br/><br/>
 
     </center>

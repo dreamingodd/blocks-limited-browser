@@ -2,7 +2,9 @@
     display: inline-block;
     width:10rem;
     height:3.5rem;
+    line-height: 3.5rem;
     border:0;
+    text-align: center;
     outline:none;
     background:#ff1939;
     box-shadow: 0 0 10px #ff1939;
@@ -23,7 +25,16 @@ li {
     margin-top:1.5rem;
 }
 .order-total{
-    margin-top:5rem;
+    margin-top:3.5rem;
+    height:3rem;
+    display: flex;
+}
+.order-total-1{
+    float:left;
+    line-height: 3rem;
+}
+.order-total-2{
+    float:right;
 }
 .order-header{
     height:5rem;
@@ -56,6 +67,7 @@ li {
 #input-quantity{
     height:2.8rem;
     border:0.1rem solid #ddd;
+    width:3.5rem;
     padding-left:1.1rem;
 }
 
@@ -178,10 +190,6 @@ li {
     background-size:contain;
 }
 .pay-type-foot{
-    position: absolute;
-    bottom:10rem;
-    width:100%;
-    left:0;
     text-align: center;
     font-size:1.8rem;
     font-weight:900;
@@ -189,6 +197,7 @@ li {
 }
 .zfb-contain{
     text-align: center;
+    padding-bottom:3rem;
 }
 .zfb-contain > div{
     margin-top:1rem;
@@ -243,7 +252,7 @@ li {
 
 .info-pass{
     display: inline-block;
-    width:4rem;
+    width:6rem;
     height:3rem;
 }
 .info-pass{
@@ -288,18 +297,7 @@ li {
     top:0.5rem;
     left:1rem;
 }
-.btn-go{
-    display: inline-block;
-    background: orange;
-    padding:0.7rem 2.4rem;
-    outline: none;
-    font-size:1rem;
-    margin-top:1rem;
-    font-weight: 400;
-    border: 0;
-    color:#525253;
-    border-radius: 0.5rem;
-}
+
 .invite-body{
     text-align: center;
 }
@@ -323,4 +321,66 @@ li {
     border-radius: 0.5rem;
     color:#525353;
     border:0.1rem solid #525353;
+}
+.login-out{
+    float:right;
+    margin-right:30px;
+}
+.btn-goods1,.btn-goods2{
+    position: fixed;
+    bottom:3rem;
+    z-index: 999;
+    display: inline-block;
+    width:10rem;
+    height:3.5rem;
+    line-height: 3.5rem;
+    border:0;
+    text-align: center;
+    outline:none;
+    background:#ffea3d;
+    box-shadow: 0 0 10px #ffea3d;
+    border-radius:20px;
+    right:3rem;
+    color:#000;
+    font-weight:900;
+}
+.btn-goods1{
+    left:4rem;
+}
+.btn-goods2{
+    right:4rem;
+}
+.container{
+    max-width: 500rem;
+}
+.r-hide{
+    opacity: 0;
+}
+.invite-code-go{
+    display: inline-block;
+    width:12rem;
+    height:3rem;
+    line-height: 3rem;
+    border:0;
+    text-align: center;
+    outline:none;
+    background:#fff7ca;
+    box-shadow: 0 0 10px #fff7ca;
+    border-radius:20px;
+    color:#000;
+}
+.btn-go{
+    display: inline-block;
+    width:15rem;
+    height:3rem;
+    line-height: 3rem;
+    border:0;
+    font-size:1.5rem;
+    font-weight:400;
+    text-align: center;
+    outline:none;
+    background:#ffea3d;
+    box-shadow: 0 0 10px #ffea3d;
+    border-radius:20px;
+    color:#000;
 }
