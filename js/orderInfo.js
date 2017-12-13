@@ -29,7 +29,7 @@ $(function () {
                 txt = '待审核';
             } else if(v.status == 3) {
                 styl = 'info-lose-icon';
-                txt = '审核未通过';
+                txt = '未通过';
             } else {
                 styl = 'info-pass-icon';
                 txt = '审核通过';
