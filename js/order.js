@@ -76,10 +76,6 @@ $(function() {
         }
         if(empty) {
             data.inviteCode = $('#yt-address').val();
-            if(!data.inviteCode) {
-                alert('邀请码不能为空！');
-                return;
-            }
         }
         if (data.name == '' || data.cellphone == '' || data.address == '') {
             alert('姓名、手机号码、收货地址不能为空！')
