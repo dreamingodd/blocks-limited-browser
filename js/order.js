@@ -21,8 +21,9 @@ $(function() {
             }
         );
     } else if (type == 'inviteCode') {
-        inviteCode = searchURL.split("&")[0].split("=")[1]
-        $('#input-name').text(inviteCode)
+        inviteCode = GetQueryString('inviteCode');
+        $('#ytCon').removeClass('r-hide');
+        $('#yt-address').val(inviteCode).prop('disabled',true);
     } else {
         empty = 'empty';
         $('#ytCon').removeClass('r-hide');
@@ -38,7 +39,7 @@ $(function() {
     * */
     var _cctv = parseInt($('#input-quantity').val());
     if(_cctv){
-        $('#total-price').html(parseInt(9988*_cctv));
+        $('#total-price').html(parseInt(10000*_cctv));
     }
     $('.order-total-btn').on('click',function(e){
         var txt = $(this).html();
@@ -55,10 +56,14 @@ $(function() {
             }
         }
         var _val = $('#input-quantity').val();
-        $('#total-price').html(parseInt(9988*_val));
+        $('#total-price').html(parseInt(10000*_val));
         _cctv = 0;
     });
-
+    function GetQueryString(name){
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r!=null)return  decodeURI(r[2]); return null;
+    }
     $("#submit-btn").click(function(){
         var data = {};
         data.name = $('#input-name').val();
@@ -69,8 +74,8 @@ $(function() {
             data.inviteCode = inviteCode;
         }
         if(empty) {
-            data.etherAddress = $('#yt-address').val();
-            if(!data.etherAddress) {
+            data.inviteCode = $('#yt-address').val();
+            if(!data.inviteCode) {
                 alert('邀请码不能为空！');
                 return;
             }

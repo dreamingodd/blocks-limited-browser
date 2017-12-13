@@ -1,7 +1,16 @@
 $(function(){
     let cellphone = GetQueryString('cellphone');
+    let inviteCode = GetQueryString('inviteCode');
     $('#changePage1').attr('href', frontPath);
-    $('#changePage2').attr('href', cellphone?'merchandise.html?cellphone=' + cellphone:'merchandise.html');
+    if(cellphone){
+        $('#changePage2').attr('href', 'merchandise.html?cellphone=' + cellphone);
+    } else if(inviteCode){
+        $('#changePage2').attr('href', 'merchandise.html?inviteCode=' + inviteCode);
+    } else {
+        $('#changePage2').attr('href', 'merchandise.html');
+    }
+
+
     function GetQueryString(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
         var r = window.location.search.substr(1).match(reg);

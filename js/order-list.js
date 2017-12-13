@@ -2,7 +2,7 @@ $(function () {
     var password;
     var searchText = GetQueryString('searchURL');
     $('#subPwd').on('click',function(){
-        setCookie('password',md5($('#password-text').val()),);
+        setCookie('password',md5($('#password-text').val()));
         history.go(0);
     });
     var failMsg = '';
