@@ -2,14 +2,21 @@ $(function(){
     let cellphone = GetQueryString('cellphone');
     let inviteCode = GetQueryString('inviteCode');
     $('#changePage1').attr('href', frontPath + (inviteCode?'?inviteCode=' + inviteCode:''));
-    if(cellphone){
-        $('#changePage2').attr('href', 'merchandise.html?cellphone=' + cellphone);
-    } else if(inviteCode){
-        $('#changePage2').attr('href', 'merchandise.html?inviteCode=' + inviteCode);
-    } else {
-        $('#changePage2').attr('href', 'merchandise.html');
-    }
 
+    $('#changePage1').on('click',function(){
+        window.location.href = frontPath + (inviteCode?'?inviteCode=' + inviteCode:'');
+    })
+    $('#changePage2').on('click',function(){
+        if(cellphone){
+            window.location.href =  'merchandise.html?cellphone=' + cellphone;
+            $('#changePage2').attr('href', 'merchandise.html?cellphone=' + cellphone);
+        } else if(inviteCode){
+            window.location.href =  'merchandise.html?inviteCode=' + inviteCode;
+            $('#changePage2').attr('href', 'merchandise.html?inviteCode=' + inviteCode);
+        } else {
+            window.location.href =  'merchandise.html';
+        }
+    })
 
     function GetQueryString(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
