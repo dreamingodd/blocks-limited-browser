@@ -26,7 +26,6 @@ $(function() {
         $('#yt-address').val(inviteCode).prop('disabled',true);
     } else {
         empty = 'empty';
-        $('#ytCon').removeClass('r-hide');
     }
 
     /*
