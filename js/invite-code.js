@@ -3,9 +3,10 @@ $(function() {
     searchURL = searchURL.substring(1, searchURL.length);
     var cellphone = searchURL.split("&")[0].split("=")[1];
     var inviteCode = '';
+    var _inviteCode = GetQueryString('inviteCode');
 
     // purchase link
-    $('#purchase-link').attr('href', 'goods.html?cellphone=' + cellphone);
+    $('#purchase-link').attr('href', 'goods.html' + (_inviteCode?'?inviteCode='+_inviteCode:''));
 
     // Get user information.
     $.get(
@@ -25,7 +26,12 @@ $(function() {
             }
         }
     );
-
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return decodeURI(r[2]);
+        return null;
+    }
     // copy invite code
     var clipboard = new Clipboard('#copy', {
         text: function() {

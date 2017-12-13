@@ -1,8 +1,14 @@
 $(function(){
+    var inviteCode = GetQueryString('inviteCode');
     $("#alert-btn").click(function(){
         alert('您已获得邀请码，请点击下方查看已有邀请码');
     })
-
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return decodeURI(r[2]);
+        return null;
+    }
     $("#submit-btn").click(function(){
         var data = {};
         data.name = $('#input-name').val();
@@ -27,7 +33,11 @@ $(function(){
                 } else if (res.data == 0) {
                     alert('您已获得邀请码，请点击下方查看已有邀请码!');
                 } else {
-                    window.location.href = "invite-code.html?cellphone=" + data.cellphone;
+                    if (inviteCode) {
+                        window.location.href = "invite-code.html?cellphone=" + data.cellphone + '&inviteCode=' + inviteCode;
+                    }else{
+                        window.location.href = "invite-code.html?cellphone=" + data.cellphone;
+                    }
                 }
             }
         );

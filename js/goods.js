@@ -1,7 +1,7 @@
 $(function(){
     let cellphone = GetQueryString('cellphone');
     let inviteCode = GetQueryString('inviteCode');
-    $('#changePage1').attr('href', frontPath);
+    $('#changePage1').attr('href', frontPath + (inviteCode?'?inviteCode=' + inviteCode:''));
     if(cellphone){
         $('#changePage2').attr('href', 'merchandise.html?cellphone=' + cellphone);
     } else if(inviteCode){
