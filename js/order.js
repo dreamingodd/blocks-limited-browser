@@ -5,7 +5,9 @@ $(function() {
     var cellphone, inviteCode,empty;
     if (type == 'cellphone') {
         cellphone = searchURL.split("&")[0].split("=")[1]
-        $('#order-link').attr('href', 'order.html?cellphone=' + cellphone)
+        $('#order-link').on('click', function(){
+            window.location.href = 'order.html?cellphone=' + cellphone;
+        })
         // Get user information.
         $.get(
             backPath + '/invite/inviteUser/' + cellphone,

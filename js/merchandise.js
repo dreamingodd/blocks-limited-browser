@@ -5,11 +5,11 @@ $(function(){
     var cellphone, inviteCode
     if (type == 'cellphone') {
         cellphone = searchURL.split("&")[0].split("=")[1]
-        $('#order-link').attr('href', 'order.html?cellphone=' + cellphone);
+        window.location.href =  'order.html?cellphone=' + cellphone;
     } else if (type == 'inviteCode') {
         inviteCode = searchURL.split("&")[0].split("=")[1]
-        $('#order-link').attr('href', 'order.html?inviteCode=' + inviteCode);
+        window.location.href =  'order.html?inviteCode=' + inviteCode;
     } else {
-        $('#order-link').attr('href', 'order.html?empty=');
+        window.location.href =  'order.html?empty=';
     }
 });
