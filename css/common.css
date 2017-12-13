@@ -224,6 +224,7 @@ li {
     height:2.5rem;
     font-weight: 900;
     text-align: center;
+    color:#ff1939;
 }
 .common-info-con{
     border:0.1rem solid #ddd;
@@ -288,7 +289,7 @@ li {
     bottom:20rem;
     width:3rem;
     height:9rem;
-    background:orange;
+    background:#ffea3d;
     border-radius: 0.5rem 0 0 0.5rem;
 }
 .side-info  span{
@@ -331,7 +332,7 @@ li {
     bottom:3rem;
     z-index: 999;
     display: inline-block;
-    width:10rem;
+    width:12rem;
     height:3.5rem;
     line-height: 3.5rem;
     border:0;
