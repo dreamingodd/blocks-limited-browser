@@ -9,6 +9,13 @@ $(function(){
         if (r != null) return decodeURI(r[2]);
         return null;
     }
+    $('#showInvite').on('click',function(){
+        if (inviteCode) {
+            window.location.href = "view-invite-code.html?inviteCode=" + inviteCode;
+        }else{
+            window.location.href = "view-invite-code.html";
+        }
+    })
     $("#submit-btn").click(function(){
         var data = {};
         data.name = $('#input-name').val();
