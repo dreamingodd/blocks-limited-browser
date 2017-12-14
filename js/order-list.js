@@ -152,7 +152,8 @@ function convertOrderToTr(order) {
     trStr += "<td>" + order.quantity + "</td>"
     trStr += "<td>" + (order.sum / 100) + "</td>"
     statusText = ''
-    if (order.status == 0 || order.status == 1) statusText = '待审核'
+    if (order.status == 0) statusText = '未付款'
+    if (order.status == 1) statusText = '待审核'
     if (order.status == 2) statusText = '审核通过'
     if (order.status == 3) statusText = '审核未通过'
     if (order.status == 4) statusText = '送货中'
