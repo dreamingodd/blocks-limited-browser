@@ -24,6 +24,7 @@ $(function () {
         $.each(res.data, function (i, v) {
             var styl = '';
             var txt = '';
+            var comment = '';
             if (v.status == 0||v.status == 1) {
                 styl = 'info-pending-icon';
                 txt = '待审核';
@@ -33,6 +34,9 @@ $(function () {
             } else {
                 styl = 'info-pass-icon';
                 txt = '审核通过';
+            }
+            if(v.comment){
+                comment = v.comment;
             }
             _html+=`<div class="common-info-con">
             <div class="common-info-top">
@@ -49,6 +53,7 @@ $(function () {
                         <span>购买数量：${v.quantity}</span></li>
                     <li>手机号码：${v.cellphone}<span></span></li>
                     <li>收货地址：${v.address}<span></span></li>
+                    <li>备注：${comment}<span></span></li>
                 </ul>
             </div>
         </div>`;

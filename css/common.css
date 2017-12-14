@@ -69,6 +69,7 @@ li {
     border:0.1rem solid #ddd;
     width:3.5rem;
     padding-left:1.1rem;
+    left:6rem;
 }
 
 .order-total-btn{
@@ -80,14 +81,24 @@ li {
     border:0.1rem solid #ddd;
 
 }
+.total-click{
+    position: relative;
+}
+.total-click span{
+    position: absolute;
+}
+.total-click input{
+    position: absolute;
+}
 .btn-less{
     border-right:0;
-    margin-left:3rem;
     border-radius: 0.5rem 0 0 0.5rem;
+    left:3rem;
 }
 .btn-plus{
     border-left:0;
     border-radius: 0 0.5rem 0.5rem 0;
+    left:9.5rem;
 }
 .order-buy-total{
     display: inline-block;
