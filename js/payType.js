@@ -26,7 +26,12 @@ $(function () {
         if(r!=null)return  decodeURI(r[2]); return null;
     }
     $('#submit-btn').on('click',function(){
+        var data = {
+            id: GetQueryString('id'),
+        };
+
         if(payType === 'z') {
+            data.payChannel = 1;
             var _zfbAccount = $('#zfb-account').val();
             var _zfbUser = encodeURI($('#zfb-user').val());
 
@@ -37,8 +42,11 @@ $(function () {
                 alert('请输入账号持有人');
                 return;
             }
-            window.location.href = "zfb.html?cellphone=" + GetQueryString('cellphone') + "&total=" + GetQueryString('total')+ '&account=' + _zfbAccount + '&name=' + _zfbUser + '&id=' + GetQueryString('id');
+            data.payAccount = _zfbAccount;
+            data.payerName = _zfbUser;
+            payTypeAjax(data);
         } else {
+            data.payChannel = 2;
             var _bankAccount = $('#bank-card').val();
             var _bankUser = encodeURI($('#bank-user').val());
             if (!_bankAccount) {
@@ -48,7 +56,23 @@ $(function () {
                 alert('请输入开户人');
                 return;
             }
-            window.location.href = "bank.html?cellphone=" + GetQueryString('cellphone') + "&total=" + GetQueryString('total') + '&account=' + _bankAccount + '&name=' + _bankUser+ '&id=' + GetQueryString('id');
+            data.payAccount = _bankAccount;
+            data.payerName = _bankUser;
+            payTypeAjax(data);
         }
     })
+    function payTypeAjax(data) {
+        $.ajax({
+            type:'put',
+            dataType: 'json',
+            url: backPath + '/invite/order/paid' + `?id=${data.id}&payChannel=${data.payChannel}&payAccount=${data.payAccount}&payerName=${data.payerName}`,
+            success:function(res){
+                if (data.payChannel == 1) {
+                    window.location.href = "zfb.html?cellphone=" + GetQueryString('cellphone') + "&total=" + GetQueryString('total')+ '&account=' + data.payAccount + '&name=' + data.payerName + '&id=' + GetQueryString('id');
+                }else{
+                    window.location.href = "bank.html?cellphone=" + GetQueryString('cellphone') + "&total=" + GetQueryString('total') + '&account=' + data.payAccount + '&name=' + data.payerName+ '&id=' + GetQueryString('id');
+                }
+            }
+        })
+    }
 });
