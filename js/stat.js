@@ -13,7 +13,7 @@ $(function(){
                 $('#data-table').append(createTh());
                 for (i = 0; i < users.length; i++) {
                     var user = users[i];
-                    $('#data-table').append(convertUserToTr(user));
+                    $('#data-table').append(convertUserToTr(user, i + 1));
                 }
             }
         }
@@ -24,6 +24,7 @@ function createTh() {
 
     var trStr = "";
     trStr += "<tr>"
+    trStr += "<th>" + '序号' + "</th>"
     trStr += "<th>" + '登记时间' + "</th>"
     trStr += "<th>" + '姓名' + "</th>"
     trStr += "<th>" + '手机' + "</th>"
@@ -35,10 +36,11 @@ function createTh() {
     return trStr;
 }
 
-function convertUserToTr(user) {
+function convertUserToTr(user, i) {
     var trStr = "";
 
     trStr += "<tr>"
+    trStr += "<td>" + i + "</td>"
     trStr += "<td>" + user.createdAt + "</td>"
     trStr += "<td>" + user.name + "</td>"
     trStr += "<td>" + user.cellphone + "</td>"
