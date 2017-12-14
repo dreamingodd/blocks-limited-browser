@@ -37,7 +37,7 @@ $(function() {
     // copy invite code
     var clipboard = new Clipboard('#copy', {
         text: function() {
-            return '黄埔定制版库神购买邀请：' + merchandisePath + '?inviteCode=' + inviteCode;
+            return '币圈黄埔定制版库神钱包购买邀请：' + merchandisePath + '?inviteCode=' + inviteCode;
         }
     });
 
