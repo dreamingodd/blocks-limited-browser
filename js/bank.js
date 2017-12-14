@@ -9,22 +9,7 @@ $(function () {
     }
 
     $('#submit-btn').on('click', function () {
-        var data = {
-            id: GetQueryString('id'),
-            payChannel: 2,
-            payAccount: GetQueryString('account'),
-            payerName: GetQueryString('name')
-        };
-        $.ajax({
-            type:'put',
-            dataType: 'json',
-            url: backPath + '/invite/order/paid' + `?id=${data.id}&payChannel=${data.payChannel}&payAccount=${data.payAccount}&payerName=${data.payerName}`,
-            success:function(res){
-                if (res.data === 1) {
-                    window.location.href = "orderInfo.html?cellphone=" + GetQueryString('cellphone');
-                }
-            }
-        })
+        window.location.href = "orderInfo.html?cellphone=" + GetQueryString('cellphone');
     });
     var clipboard = new Clipboard('#copy', {
         text: function() {
