@@ -25,13 +25,19 @@ $(function () {
             var styl = '';
             var txt = '';
             var comment = '';
-            if (v.status == 0||v.status == 1) {
+            if (v.status == 0) {
+                styl = 'info-pending-icon';
+                txt = '未付款';
+            } else if(v.status == 1) {
                 styl = 'info-pending-icon';
                 txt = '待审核';
             } else if(v.status == 3) {
                 styl = 'info-lose-icon';
                 txt = '未通过';
-            } else {
+            }else if(v.status == 6) {
+                styl = 'info-pending-icon';
+                txt = '已过期';
+            }else {
                 styl = 'info-pass-icon';
                 txt = '审核通过';
             }
