@@ -22,7 +22,7 @@ $(function(){
         data.cellphone = $('#input-cellphone').val();
         data.address = $('#input-address').val();
         data.etherAddress = $('#input-ether-address').val();
-        if (data.name == '' || data.cellphone == '' || data.address == '') {
+        if (data.name == '' || data.cellphone == '' || data.address == ''||data.etherAddress=='') {
             alert('姓名、手机号码、收货地址和以太坊地址不能为空！')
             return
         }
