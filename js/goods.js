@@ -9,11 +9,11 @@ $(function(){
     })
     $('#changePage2').on('click',function(){
         if(cellphone){
-            window.location.href =  'merchandise.html?cellphone=' + cellphone;
+            window.location.href =  'order.html?cellphone=' + cellphone;
         } else if(inviteCode){
-            window.location.href =  'merchandise.html?inviteCode=' + inviteCode;
+            window.location.href =  'order.html?inviteCode=' + inviteCode;
         } else {
-            window.location.href =  'merchandise.html';
+            window.location.href =  'order.html?empty=';
         }
     })
 
